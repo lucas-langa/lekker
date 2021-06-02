@@ -2,6 +2,7 @@
 <div class="container">
   <div class="columns is-centered">
     {{#each @model as |user|}}
+    {{#unless user.archived }}
       <div class="column">
         <LinkTo @route="users.user" @model={{user}}>
           <div class="user-select is-220px">
@@ -17,6 +18,7 @@
           </div>
         </LinkTo>
       </div>
+    {{/unless}}
     {{/each}}
   </div>
 </div>

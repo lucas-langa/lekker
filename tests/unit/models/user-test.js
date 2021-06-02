@@ -14,5 +14,11 @@ module('Unit | Model | user', function(hooks) {
     run(() => userModel.changeValue());
     assert.equal(userModel.value, true, 'Value should change when function is called.');
     assert.ok(userModel);
+    
+    assert.equal(userModel.archived, false, 'Users are not archived by default.');
+    assert.ok(userModel);
+    run(() => userModel.archiveUser());
+    assert.equal(userModel.archived, true, "User should be archived now");
+    assert.ok(userModel);
   });
 });
